@@ -9,7 +9,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3030",
+  port: window.location.protocol === "https:" ? 443 : 80, // Sử dụng cổng 443 cho HTTPS, 80 cho HTTP
 });
 
 let myVideoStream;
